@@ -4,8 +4,6 @@ pueda calificar sus trabajos
 Please do not create nested folders and do not nest files into
 the folders in order to the AI agent be able to grade your homeworks
 
-# Technical instructions
-
 ## Create and activate Python virtual environment
 ```bash
     python -m venv venv
@@ -35,3 +33,6 @@ Create file *requirements.txt*
     deactivate
     rm -rf venv
 ```
+
+
+
