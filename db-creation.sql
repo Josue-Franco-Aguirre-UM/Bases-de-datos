@@ -1,26 +1,30 @@
--- Script para crear la base de datos y las tablas necesarias
+-- Crear la base de datos
+CREATE DATABASE employees_db;
 
-CREATE DATABASE IF NOT EXISTS college_manager;
+-- Usar la base de datos
+USE employees_db;
 
-USE professor_assistant_db;
-
--- Tabla para almacenar la información del curso
-CREATE TABLE IF NOT EXISTS courses (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
-    start_date DATE NOT NULL,
-    end_date DATE NOT NULL,
-    cut1_percentage FLOAT NOT NULL,
-    cut2_percentage FLOAT NOT NULL,
-    cut3_percentage FLOAT NOT NULL
+-- Crear la tabla de empleados
+CREATE TABLE employees (
+    code VARCHAR(50) PRIMARY KEY,
+    employee VARCHAR(100),
+    email VARCHAR(100)
 );
 
--- Tabla para almacenar la lista de estudiantes
-CREATE TABLE IF NOT EXISTS students (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    code VARCHAR(255) NOT NULL,
-    full_name VARCHAR(255) NOT NULL,
-    emails VARCHAR(255) NOT NULL,
-    course_id INT,
-    FOREIGN KEY (course_id) REFERENCES courses(id) ON DELETE CASCADE
+-- Crear la tabla de detalles de empleados
+CREATE TABLE employee_details (
+    code VARCHAR(50),
+    area VARCHAR(100),
+    schedule VARCHAR(100),
+    FOREIGN KEY (code) REFERENCES employees(code)
+);
+
+-- Crear la tabla combinada de empleados
+CREATE TABLE employees_combined (
+    code VARCHAR(50),
+    employee VARCHAR(100),
+    email VARCHAR(100),
+    area VARCHAR(100),
+    schedule VARCHAR(100),
+    PRIMARY KEY (code)
 );

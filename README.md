@@ -15,12 +15,13 @@ Create file *requirements.txt*
 
 ```bash
     pip install -r requirements.txt
+    pip install pymysql
 ```
 
 ## Run streamlit project
 
 ```bash
-    streamlit run app.py 
+    streamlit run Home.py 
 ```
 ## Install openpyxl
 ```

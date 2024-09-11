@@ -15,3 +15,5 @@ mysql-connector-python
 
 streamlit
 watchdog
+
+pymysql
